@@ -10,16 +10,29 @@
 
 const vegetables = [
 	{
-		name: "Vegetable 1",
-		image: "vegetable1.jpg",
-		info: "This is some information about Vegetable 1."
+		name: "Spinach",
+		image: "https://greenspoon.co.ke/wp-content/uploads/2022/02/Greenspoon-Spinach-Mlango-Farm-1.jpg",
+		info: "green vegatable"
 	},
-	// Repeat for vegetables 2-10
+	
 ];
 
-vegetables.forEach((vegetable, index) => {
-	const vegElement = document.getElementById(`vegetable${index+1}`);
-	vegElement.querySelector("h2").textContent = vegetable.name;
-	vegElement.querySelector("img").src = vegetable.image;
-	vegElement.querySelector("p").textContent = vegetable.info;
+
+const quickShopButtons = document.querySelectorAll('.quick-shop-button');
+
+quickShopButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const productName = button.parentElement.querySelector('h2').innerText;
+    const productPrice = button.parentElement.querySelector('p').innerText;
+
+    
+    addToQuickShop(productName, productPrice);
+  });
 });
+
+function addToQuickShop(productName, productPrice) {
+  const quickShopList = document.querySelector('.quick-shop-list');
+  const listItem = document.createElement('li');
+  listItem.innerText = `${productName} - ${productPrice}`;
+  quickShopList.appendChild(listItem);
+}
