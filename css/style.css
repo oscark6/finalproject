@@ -24,7 +24,7 @@ body{
 
 
 header{
-    position: fixed;
+    position:relative;
     width: 100%;
     top: 0;
     right:0%;
@@ -76,3 +76,45 @@ header{
     z-index:10001;
     display: none;
 }
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 20px;
+}
+
+section {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	flex-basis: calc(33.333% - 20px);
+	margin: 10px;
+	padding: 20px;
+	text-align: center;
+}
+
+section h2 {
+	margin-top: 0;
+}
+
+section img {
+	border-radius: 50%;
+	height: 200px;
+	margin-bottom: 20px;
+	width: 200px;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+}
+
+footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
